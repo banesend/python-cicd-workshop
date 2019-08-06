@@ -44,11 +44,10 @@ jobs:
       # other common Python testing frameworks include pytest and nose
       # https://pytest.org
       # https://nose.readthedocs.io
-      - run:
-          name: run tests
+       - run:
+          name: Install Python Dependencies
           command: |
-            . venv/bin/activate
-            python manage.py test
+            pip install --user --no-cache-dir -r requirements.txt
 
       - store_artifacts:
           path: test-reports
